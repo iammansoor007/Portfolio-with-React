@@ -1,9 +1,126 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-*{
+* {
 
     font-family: Outfit;
+}
+
+.shiny-text {
+    background: linear-gradient(90deg, #3b82f6, #603fac, #ec4899, #3b82f6);
+    background-size: 300% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes shine {
+    to {
+        background-position: 300% center;
+    }
+}
+
+@keyframes blob1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(0, 20px) scale(0.9);
+    }
+
+    75% {
+        transform: translate(-30px, -15px) scale(1.05);
+    }
+}
+
+@keyframes blob2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(-20px, 25px) scale(1.05);
+    }
+
+    50% {
+        transform: translate(15px, -15px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(25px, 20px) scale(1.1);
+    }
+}
+
+@keyframes float-dot {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(15px, -20px);
+    }
+}
+
+.animate-blob1 {
+    animation: blob1 15s infinite ease-in-out;
+}
+
+.animate-blob2 {
+    animation: blob2 18s infinite ease-in-out;
+}
+
+.animate-float-dot {
+    animation: float-dot 8s infinite ease-in-out;
+}
+
+.shiny-text {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Zebra stripes animation */
+@keyframes zebra-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 120px 120px;
+  }
+}
+
+/* Zebra stripe background class */
+.zebra-bg {
+  background: repeating-linear-gradient(
+    135deg,
+    #777777 0px,
+    #828282 40px,
+    #8b8b8b 40px,
+    #afafaf 80px
+  );
+  animation: zebra-move 12s linear infinite;
+  background-size: 120px 120px;
+  opacity: 0.10; /* Keep it subtle */
 }
